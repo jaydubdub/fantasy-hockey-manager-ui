@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Application Primary Menu" (click)="navDrawer.toggle()">
+    <mat-icon>menu</mat-icon>
+    <span>HFPHL Manager</span>
+  </button>
+</mat-toolbar>
+
+
+<mat-drawer-container class="app-container" autosize>
+  <mat-drawer #navDrawer class="application-sidenav" mode="side">
+    Nav TBD
+  </mat-drawer>
+
+  <div class="">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
