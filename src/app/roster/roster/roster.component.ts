@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, startWith } from 'rxjs';
-import { RosterPlayer, RosterTypes } from '../models';
+import { Observable, shareReplay, startWith } from 'rxjs';
+import { RosterPlayer, RosterPlayerGp, RosterTypes } from '../models';
 import { RosterService } from '../roster.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { RosterService } from '../roster.service';
 })
 export class RosterComponent implements OnInit {
 
-  public farmRoster: Observable<RosterPlayer[]> = this.rosterService.getRosterByType(RosterTypes.FARM).pipe(
-    startWith([])
+  public farmRoster: Observable<RosterPlayerGp[]> = this.rosterService.getMaxGpByType(RosterTypes.FARM).pipe(
+    shareReplay(1)
   );
 
-  public prospectRoster: Observable<RosterPlayer[]> = this.rosterService.getRosterByType(RosterTypes.PROSPECT).pipe(
-    startWith([])
+  public prospectRoster: Observable<RosterPlayerGp[]> = this.rosterService.getMaxGpByType(RosterTypes.PROSPECT).pipe(
+    shareReplay(1)
   );
 
   constructor(

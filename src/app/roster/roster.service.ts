@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { RosterTypes } from './models/roster-types.enum';
 
 import { environment as env } from 'src/environments/environment';
-import { RosterPlayer } from './models';
+import { RosterPlayer, RosterPlayerGp } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,9 @@ export class RosterService {
 
   public getRosterByType(rosterType: RosterTypes): Observable<RosterPlayer[]> {
     return this.http.get(`${env.apiConfig.basePath}/analysis/${rosterType}/max-games`) as Observable<RosterPlayer[]>;
+  }
+
+  public getMaxGpByType(rosterType: RosterTypes): Observable<RosterPlayerGp[]> {
+    return this.http.get(`${env.apiConfig.basePath}/analysis/${rosterType}/max-games`) as Observable<RosterPlayerGp[]>;
   }
 }

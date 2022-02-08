@@ -2,17 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RosterComponent } from './roster/roster.component';
 import { RosterRoutingModule } from './roster-routing.module';
-import { MatTabsModule } from '@angular/material/tabs'
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { RosterPlayerPanelComponent } from './roster-player-panel/roster-player-panel.component'
 
 
 @NgModule({
   declarations: [
-    RosterComponent
+    RosterComponent,
+    RosterPlayerPanelComponent
   ],
   imports: [
     CommonModule,
     RosterRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule
   ]
 })
 export class RosterModule { }

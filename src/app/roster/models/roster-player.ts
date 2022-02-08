@@ -6,3 +6,12 @@ export type RosterPlayer = {
     overall?: number;
     position: string;
 }
+
+export type RosterPlayerGp = {
+    draftYear: string;
+    gamesPlayed: number;
+    gamesRemaining: number;
+    name: string;
+    playerUrl: string;
+    position: string;
+}

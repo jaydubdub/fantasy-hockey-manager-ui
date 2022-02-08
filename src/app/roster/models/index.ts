@@ -1,2 +1,3 @@
 export { RosterTypes } from "./roster-types.enum";
-export { RosterPlayer } from './roster-player';
+export { RosterPlayer, RosterPlayerGp } from './roster-player';
+export { PlayerPositions } from './player-positions.enum';

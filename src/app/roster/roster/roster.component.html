@@ -2,11 +2,9 @@
     <mat-tab-group>
         <mat-tab label="Farm">
             <div *ngIf="(farmRoster | async) as farmPlayers">
-                <ul *ngIf="farmPlayers.length">
-                    <li *ngFor="let player of farmPlayers">
-                        {{player.name}}
-                    </li>
-                </ul>
+                <ng-container *ngFor="let player of farmPlayers">
+                    <fhm-roster-player-panel [playerDetail]="player"></fhm-roster-player-panel>
+                </ng-container>
                 <p *ngIf="!farmPlayers.length">No farm players found</p>
             </div>
         </mat-tab>
